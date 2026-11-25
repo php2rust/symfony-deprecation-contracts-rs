@@ -90,7 +90,7 @@ mod tests {
 
     #[test]
     fn message_prefix_follows_php_truthiness() {
-        let (_, seen) = collect(|| {
+        let ((), seen) = collect(|| {
             trigger_deprecation(b"vendor/pkg", b"1.1", b"gone");
             trigger_deprecation(b"", b"", b"bare");
             trigger_deprecation(b"0", b"0", b"zeros");
@@ -111,8 +111,8 @@ mod tests {
     #[test]
     fn dropped_without_handler_and_handler_restored() {
         trigger_deprecation(b"a", b"1", b"nobody listens");
-        let (_, outer) = collect(|| {
-            let (_, inner) = collect(|| trigger_deprecation(b"a", b"1", b"inner"));
+        let ((), outer) = collect(|| {
+            let ((), inner) = collect(|| trigger_deprecation(b"a", b"1", b"inner"));
             assert_eq!(inner.len(), 1);
             trigger_deprecation(b"a", b"1", b"outer");
         });
