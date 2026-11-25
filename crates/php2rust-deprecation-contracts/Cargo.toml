@@ -7,3 +7,6 @@ publish = false
 description = "Port of symfony/deprecation-contracts (trigger_deprecation)"
 
 [dependencies]
+
+[lints]
+workspace = true
