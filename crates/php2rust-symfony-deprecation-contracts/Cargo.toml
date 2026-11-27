@@ -1,0 +1,12 @@
+[package]
+name = "php2rust-symfony-deprecation-contracts"
+version = "0.1.0"
+edition = "2024"
+license = "MIT"
+publish = false
+description = "Port of symfony/deprecation-contracts: trigger_deprecation(), delivered as a silenced E_USER_DEPRECATED to a per-thread error handler"
+
+[dependencies]
+
+[lints]
+workspace = true

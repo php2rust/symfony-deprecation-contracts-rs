@@ -1,6 +1,6 @@
-# Symfony Deprecation Contracts
+# php2rust-symfony-deprecation-contracts
 
-Private workspace crate: a port of `symfony/deprecation-contracts` v3.7.1
+A port of `symfony/deprecation-contracts` v3.7.1
 (`f3202fa1`). MIT; Symfony source copyright Fabien Potencier. Unofficial,
 not affiliated with or endorsed by Symfony.
 
@@ -19,3 +19,11 @@ dropped, as PHP drops a silenced error nobody handles.
 
 The `...$args` form (`vsprintf()` of the message): no ported caller uses it.
 Upstream has no tests.
+
+## Users
+
+Twig, the Symfony components and other library ports call
+`trigger_deprecation()`, as their PHP packages require
+`symfony/deprecation-contracts`. All of them must use this one crate (one
+git source), so that one handler sees every deprecation. Moved here on
+November 27 from symfony-rs `crates/deprecation-contracts`.
