@@ -3,7 +3,7 @@ members = ["crates/php2rust-symfony-deprecation-contracts"]
 resolver = "3"
 
 # Lints for every member (`[lints] workspace = true`), the same rule set as
-# symfony-rs and compatibility-tools-rs.
+# symfony-rs and compatibility-tools.
 [workspace.lints.clippy]
 all = { level = "warn", priority = -1 }
 pedantic = { level = "warn", priority = -1 }
